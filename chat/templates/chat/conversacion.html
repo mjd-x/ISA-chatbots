@@ -1,0 +1,34 @@
+<h1><div style="text-align: center;">Conversacion {{ conversacion.id }}</h1>
+<h3>Usuarios</h3>
+
+Usuario 1: {{ conversacion.idUser1 }} <div></div>
+Usuario 2: {{ conversacion.idUser2 }}
+
+<h3>Mensajes</h3>
+<ul>
+    {% for mensaje in conversacion.mensaje_set.all %}
+    <li><a href="{% url 'chat:mensaje' mensaje.id %}">{{ mensaje.idUser }}: {{ mensaje.mensaje }}</a></li>
+    {% endfor %}
+</ul>
+
+{% comment %}
+    <form action="{% url 'chat:addMensaje' conversacion.id  %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Agregar mensaje</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+        <label>Usuario:
+            <select name="user">
+                <option value="{{ conversacion.idUser1 }}">{{ conversacion.idUser1 }}</option>
+                <option value="{{ conversacion.idUser2 }}">{{ conversacion.idUser2 }}</option>
+            </select>
+        </label><br>
+
+        <label for="mensaje">Mensaje:
+            <input type="text" name="mensaje" id="mensaje" value="{{ mensaje.mensaje }}">
+        </label><br>
+    </fieldset>
+    <input type="submit" value="Submit">
+    </form>
+{% endcomment %}
