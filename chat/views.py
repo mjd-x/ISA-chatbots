@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views import generic
 
 def indexView(request):
-    messages = Mensaje.objects.all()
+    messages = Mensaje.objects.all().order_by("date")
     julieBot = User.objects.get(id=1)
     eddieBot = User.objects.get(id=2)
 
