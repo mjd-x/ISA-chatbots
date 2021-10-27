@@ -2,7 +2,6 @@ from django.views.generic import TemplateView
 
 from .models import *
 from django.shortcuts import get_object_or_404, render, redirect
-from django.views import generic
 from .forms import UserForm, MessageForm
 
 def indexView(request):

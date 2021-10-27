@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chat.apps.ChatConfig',
+    'drf_yasg',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
