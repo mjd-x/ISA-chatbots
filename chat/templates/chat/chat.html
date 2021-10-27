@@ -68,7 +68,7 @@
           </li>
           {% endif %}
 
-          {% if message.idUser.id == 2 %}
+          {% if message.idUser.id != 1 %}
           <li class="clearfix">
               <div class="message-data align-right">
                 <span class="message-data-time" > {{ message.date }} </span> &nbsp; &nbsp;
@@ -90,7 +90,7 @@
 
         <button>Send</button>
 
-      </div> <!-- end chat-message -->
+      </div>
 
     </div> <!-- end chat -->
 
