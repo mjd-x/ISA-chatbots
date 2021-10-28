@@ -22,6 +22,6 @@ class Message(models.Model):
     idChat = models.ForeignKey(Chat, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        # return "(" + str(self.idChat) + ") " + str(self.idUser) + ": " + '"' + str(self.mensaje) + '"'
+        #string= "(" + str(self.idChat.id) + ") " + str(self.idUser) + ": " + '"' + str(self.message) + '"'
         string = str(self.idUser) + ": " + '"' + str(self.message) + '"'
         return string

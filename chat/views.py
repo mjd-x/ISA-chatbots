@@ -4,6 +4,12 @@ from django.views.generic import TemplateView
 from .models import *
 from django.shortcuts import get_object_or_404, render, redirect
 from .forms import UserForm, MessageForm
+from .chatbots import *
+
+
+#######################
+# VIEWS
+#######################
 
 def indexView(request):
     # messages = Message.objects.all().order_by("date")
@@ -52,6 +58,8 @@ class formView(TemplateView):
             message_data.save()  # lo guardo a la db
 
             print(f"Data: {name}, {message}")
+
+            chat(message, new_chat.id)
             return redirect('chat:chat')  # redirect a la pagina con el chat
 
         else:  # algo salio mal, devuelve pagina con los forms limpios
