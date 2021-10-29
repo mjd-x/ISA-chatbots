@@ -1,7 +1,7 @@
 from .serializers import *
-from rest_framework import viewsets, status
-from rest_framework import mixins
+from rest_framework import viewsets, status, generics
 from rest_framework.response import Response
+from chat.forms import *
 
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
@@ -42,3 +42,32 @@ class ChatViewSet(viewsets.ModelViewSet):
         # devolver el dict completo
         return Response(final_data)
 
+
+class StartChatView(generics.GenericAPIView):
+    def post(self, request, *args, **kwargs):
+        name = request.data.get('name', '')
+        message = request.data.get('message', '')
+        print(request.data)
+        print(f"{name}, {message}")
+
+        # busco o creo el usuario
+        try:
+            user = User.objects.get(name=name)  # busco si ya existe el usuario
+            # si ya existe ese usuario, lo uso sin guardar de vuelta los datos de la form
+        except User.DoesNotExist:  # no existe ese usuario todavia
+            User.objects.create(name=name)  # lo creo
+            user = User.objects.get(name=name)  # traigo el usuario que acabo de crear
+
+        if user:  # validacion
+            # crear la conversacion
+            new_chat = Chat.objects.create(idUser1=user, idUser2=User.objects.get(id=1))  # juliebot
+
+            # creo el mensaje
+            Message.objects.create(idUser=user, idChat=new_chat, message=message)
+
+            # devuelvo el objeto
+
+            return Response({'message': 'Chat created', 'uri': f'http://localhost:8000/api/chats/{new_chat.id}'}, status=status.HTTP_201_CREATED)
+
+        else:
+            return Response({'error': 'Something went wrong'}, status=status.HTTP_400_BAD_REQUEST)

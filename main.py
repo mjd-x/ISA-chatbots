@@ -27,9 +27,6 @@ def chat():
     print("2: " + respuesta)
     # print(response.text)
 
-    # TODO armar front con django(?) y funcion para poder tener una conversacion directa
-    # presenter = el que hace get/post etc, template = html, model = db
-
 
 def responder(message):
     query = {"instance": 12332376, "message": message, "application": "6841305405613846648"}

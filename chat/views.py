@@ -51,7 +51,7 @@ class formView(TemplateView):
             message = message_form.cleaned_data['message']
 
             # crear la conversacion
-            new_chat = Chat.objects.create(idUser1=user, idUser2=User.objects.get(id=2))  # juliebot
+            new_chat = Chat.objects.create(idUser1=user, idUser2=User.objects.get(id=1))  # juliebot
 
             message_data.idUser = user  # le asigno como sender el usuario
             message_data.idChat = new_chat  # asocio a la conversacion
