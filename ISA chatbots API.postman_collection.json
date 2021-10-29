@@ -1,0 +1,1385 @@
+{
+	"info": {
+		"_postman_id": "52912634-f813-4970-959a-3592a5a257ef",
+		"name": "ISA chatbots API",
+		"description": "TP ISA 2021 Donis\n\nContact Support:\n Email: mdonis@fie.undef.edu.ar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "chats",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "chats read",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this chat."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this chat."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": -83560493,\n \"idUser1\": -90084303,\n \"idUser2\": 73584143\n}"
+								}
+							]
+						},
+						{
+							"name": "chats update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"idUser1\": 94861186,\n    \"idUser2\": -86251339\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this chat."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this chat."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": -83560493,\n \"idUser1\": -90084303,\n \"idUser2\": 73584143\n}"
+								}
+							]
+						},
+						{
+							"name": "chats partial update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"idUser1\": 94861186,\n    \"idUser2\": -86251339\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this chat."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this chat."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": -83560493,\n \"idUser1\": -90084303,\n \"idUser2\": 73584143\n}"
+								}
+							]
+						},
+						{
+							"name": "chats delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this chat."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this chat."
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "chats list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/chats/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/chats/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -92028498,\n  \"idUser1\": -61392359,\n  \"idUser2\": -12500244\n },\n {\n  \"id\": 68756574,\n  \"idUser1\": -55965462,\n  \"idUser2\": 91618658\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "chats create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUser1\": 94861186,\n    \"idUser2\": -86251339\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chats/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/chats/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": -83560493,\n \"idUser1\": -90084303,\n \"idUser2\": 73584143\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "messages",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "messages read",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/messages/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"messages",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this message."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/messages/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"messages",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this message."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": 23515060,\n \"message\": \"labore magna u\",\n \"date\": \"2007-06-02T17:45:46.246Z\",\n \"idUser\": 20566205,\n \"idChat\": 77588945\n}"
+								}
+							]
+						},
+						{
+							"name": "messages update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\": \"enim laboris eiusmod aliquip\",\n    \"idUser\": 50691093,\n    \"idChat\": -28521073\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/messages/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"messages",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this message."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/messages/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"messages",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this message."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": 23515060,\n \"message\": \"labore magna u\",\n \"date\": \"2007-06-02T17:45:46.246Z\",\n \"idUser\": 20566205,\n \"idChat\": 77588945\n}"
+								}
+							]
+						},
+						{
+							"name": "messages partial update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\": \"enim laboris eiusmod aliquip\",\n    \"idUser\": 50691093,\n    \"idChat\": -28521073\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/messages/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"messages",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this message."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/messages/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"messages",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this message."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": 23515060,\n \"message\": \"labore magna u\",\n \"date\": \"2007-06-02T17:45:46.246Z\",\n \"idUser\": 20566205,\n \"idChat\": 77588945\n}"
+								}
+							]
+						},
+						{
+							"name": "messages delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/messages/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"messages",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this message."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/messages/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"messages",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this message."
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "messages list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/messages/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/messages/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"messages",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": 55476264,\n  \"message\": \"dolor aliquip laboris aliqua\",\n  \"date\": \"1955-06-26T07:56:47.276Z\",\n  \"idUser\": 72353132,\n  \"idChat\": 44205545\n },\n {\n  \"id\": 17866377,\n  \"message\": \"in ea occaecat sunt laboris\",\n  \"date\": \"1960-01-01T20:56:57.330Z\",\n  \"idUser\": 26260365,\n  \"idChat\": -67313558\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "messages create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"enim laboris eiusmod aliquip\",\n    \"idUser\": 50691093,\n    \"idChat\": -28521073\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/messages/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"messages",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/messages/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"messages",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 23515060,\n \"message\": \"labore magna u\",\n \"date\": \"2007-06-02T17:45:46.246Z\",\n \"idUser\": 20566205,\n \"idChat\": 77588945\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "users read",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this user."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this user."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": -62352586,\n \"name\": \"culpa amet\",\n \"botInstance\": 78729293\n}"
+								}
+							]
+						},
+						{
+							"name": "users update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"cillum ut in\",\n    \"botInstance\": 91679542\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this user."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this user."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": -62352586,\n \"name\": \"culpa amet\",\n \"botInstance\": 78729293\n}"
+								}
+							]
+						},
+						{
+							"name": "users partial update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"cillum ut in\",\n    \"botInstance\": 91679542\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this user."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this user."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": -62352586,\n \"name\": \"culpa amet\",\n \"botInstance\": 78729293\n}"
+								}
+							]
+						},
+						{
+							"name": "users delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "34296102",
+											"description": "(Required) A unique integer value identifying this user."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "34296102",
+													"description": "(Required) A unique integer value identifying this user."
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "users list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": 74410956,\n  \"name\": \"ad elit\",\n  \"botInstance\": 36538244\n },\n {\n  \"id\": 16859697,\n  \"name\": \"occaecat\",\n  \"botInstance\": 52449740\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "users create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"cillum ut in\",\n    \"botInstance\": 91679542\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": -62352586,\n \"name\": \"culpa amet\",\n \"botInstance\": 78729293\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "start-chat create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/start-chat",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"start-chat"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/start-chat",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"start-chat"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "<Basic Auth Username>",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "<Basic Auth Password>",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}
