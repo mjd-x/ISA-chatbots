@@ -72,6 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mjd_chatbots.wsgi.application'
 
+LOGIN_REDIRECT_URL = 'form'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

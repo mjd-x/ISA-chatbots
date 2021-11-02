@@ -1,13 +1,20 @@
 from django import forms
-from .models import User, Message
+from .models import Message, Person
 
-# password = forms.CharField(widget=forms.PasswordInput)
+class NewUserForm(forms.ModelForm):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.CharField(widget=forms.EmailInput)
 
-class UserForm(forms.ModelForm):
+    class Meta:
+        model = Person
+        fields = ['username', 'password', 'email']
+
+class ChatUserForm(forms.ModelForm):
     username = forms.CharField()
 
     class Meta:
-        model = User
+        model = Person
         fields = ['username']
 
 class MessageForm(forms.ModelForm):

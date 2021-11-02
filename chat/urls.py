@@ -25,7 +25,9 @@ schema_view = get_schema_view(
 app_name = 'chat'
 urlpatterns = [
     path('chat/', views.indexView, name='chat'),
-    path('', views.formView.as_view(), name='form'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('start-chat/', views.formView.as_view(), name='form'),
+    path('', views.Login.as_view(), name='login'),
     path('api/start-chat', StartChatView.as_view(), name='start-chat'),
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

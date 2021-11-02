@@ -3,8 +3,9 @@ from django.views.generic import TemplateView
 
 from .models import *
 from django.shortcuts import get_object_or_404, render, redirect
-from .forms import UserForm, MessageForm
+from .forms import ChatUserForm, MessageForm, NewUserForm
 from .chatbots import *
+from django.contrib.auth.views import LoginView
 
 
 #######################
@@ -23,18 +24,38 @@ def indexView(request):
 
     return render(request, 'chat/chat.html', context)
 
+class Login(LoginView):
+    template_name = 'chat/login.html'
+
+    def get(self, request, *args, **kwargs):
+        user_form = NewUserForm()
+
+        return render(request, self.template_name, {'user_form': user_form})
+
+    def post(self, request, *args, **kwargs):
+        user_form = NewUserForm(request.POST)
+
+        if user_form.is_valid():
+            user_form.save()
+            return redirect('chat:form')
+        else:
+            user_form = NewUserForm()  # inicializo forms en blanco para "limpiar"
+
+            context = {'user_form': user_form}
+            return render(request, self.template_name, context)
+
 
 class formView(TemplateView):
     template_name = 'chat/home.html'
 
     def get(self, request, *args, **kwargs):
-        user_form = UserForm()
+        user_form = ChatUserForm()
         message_form = MessageForm()
 
         return render(request, self.template_name, {'user_form': user_form, 'message_form': message_form})
 
     def post(self, request, *args, **kwargs):
-        user_form = UserForm(request.POST)  # llena la form con la data de la POST request
+        user_form = ChatUserForm(request.POST)  # llena la form con la data de la POST request
         message_form = MessageForm(request.POST)
 
         if user_form.is_valid() and message_form.is_valid():  # validacion
@@ -63,7 +84,7 @@ class formView(TemplateView):
             return redirect('chat:chat')  # redirect a la pagina con el chat
 
         else:  # algo salio mal, devuelve pagina con los forms limpios
-            user_form = UserForm()  # inicializo forms en blanco para "limpiar"
+            user_form = ChatUserForm()  # inicializo forms en blanco para "limpiar"
             message_form = MessageForm()
 
             context = {'user_form': user_form, 'message_form': message_form}
