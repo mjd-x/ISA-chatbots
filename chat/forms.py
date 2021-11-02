@@ -1,12 +1,14 @@
 from django import forms
 from .models import User, Message
 
+# password = forms.CharField(widget=forms.PasswordInput)
+
 class UserForm(forms.ModelForm):
-    name = forms.CharField()
+    username = forms.CharField()
 
     class Meta:
         model = User
-        fields = ['name']
+        fields = ['username']
 
 class MessageForm(forms.ModelForm):
     message = forms.CharField()

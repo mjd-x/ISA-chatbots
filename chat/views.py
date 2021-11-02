@@ -38,14 +38,14 @@ class formView(TemplateView):
         message_form = MessageForm(request.POST)
 
         if user_form.is_valid() and message_form.is_valid():  # validacion
-            name = user_form.cleaned_data['name']  # seguridad cuando trae la data
+            name = user_form.cleaned_data['username']  # seguridad cuando trae la data
 
             try:
-                user = User.objects.get(name=name)  # busco si ya existe el usuario
+                user = User.objects.get(username=name)  # busco si ya existe el usuario
                 # si ya existe ese usuario, lo uso sin guardar de vuelta los datos de la form
             except User.DoesNotExist:  # no existe ese usuario todavia
                 user_form.save()  # lo creo
-                user = User.objects.get(name=name)  # traigo el usuario que acabo de crear
+                user = User.objects.get(username=name)  # traigo el usuario que acabo de crear
 
             message_data = message_form.save(commit=False)  # no guardo en la db todavia
             message = message_form.cleaned_data['message']

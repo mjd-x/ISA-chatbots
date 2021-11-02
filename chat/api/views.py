@@ -8,6 +8,13 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = UserSerializer.Meta.model.objects
 
+class PersonViewSet(viewsets.ModelViewSet):
+    serializer_class = PersonSerializer
+    queryset = PersonSerializer.Meta.model.objects
+
+class BotViewSet(viewsets.ModelViewSet):
+    serializer_class = BotSerializer
+    queryset = BotSerializer.Meta.model.objects
 
 class MessageViewSet(viewsets.ModelViewSet):
     serializer_class = MessageSerializer
