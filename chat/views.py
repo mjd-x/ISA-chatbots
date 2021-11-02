@@ -59,7 +59,7 @@ class formView(TemplateView):
 
             print(f"Data: {name}, {message}")
 
-            chat(message, new_chat.id)
+            chat(message, new_chat)
             return redirect('chat:chat')  # redirect a la pagina con el chat
 
         else:  # algo salio mal, devuelve pagina con los forms limpios

@@ -2,6 +2,7 @@ from .serializers import *
 from rest_framework import viewsets, status, generics
 from rest_framework.response import Response
 from chat.forms import *
+from ..chatbots import *
 
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
@@ -65,6 +66,8 @@ class StartChatView(generics.GenericAPIView):
             # creo el mensaje
             Message.objects.create(idUser=user, idChat=new_chat, message=message)
 
+            chat(message, new_chat)
+            
             # devuelvo el objeto
 
             return Response({'message': 'Chat created', 'uri': f'http://localhost:8000/api/chats/{new_chat.id}'}, status=status.HTTP_201_CREATED)
