@@ -24,8 +24,8 @@ def indexView(request):
 
     return render(request, 'chat/chat.html', context)
 
-class Login(LoginView):
-    template_name = 'chat/login.html'
+class RegisterView(TemplateView):
+    template_name = 'chat/create.html'
 
     def get(self, request, *args, **kwargs):
         user_form = NewUserForm()
@@ -44,8 +44,7 @@ class Login(LoginView):
             context = {'user_form': user_form}
             return render(request, self.template_name, context)
 
-
-class formView(TemplateView):
+class FormView(TemplateView):
     template_name = 'chat/home.html'
 
     def get(self, request, *args, **kwargs):

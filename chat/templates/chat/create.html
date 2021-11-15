@@ -15,7 +15,7 @@
         {% csrf_token %}
         {{ user_form.as_p }}
         <br>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button> <button onclick="window.location.href='/'">Log in</button>
     </form>
 </div>
 {% endblock %}
