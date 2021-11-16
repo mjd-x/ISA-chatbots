@@ -4,4 +4,6 @@ from .models import *
 admin.site.register(User)
 admin.site.register(Chat)
 admin.site.register(Message)
+admin.site.register(Bot)
+admin.site.register(Person)
 # Register your models here.

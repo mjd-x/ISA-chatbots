@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.urls import reverse_lazy
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -72,7 +74,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mjd_chatbots.wsgi.application'
 
+LOGIN_REDIRECT_URL = 'start-chat/'
+LOGIN_URL = reverse_lazy('login')
 
+AUTH_USER_MODEL = 'chat.User'  # para que tome este modelo para la autenticacion
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

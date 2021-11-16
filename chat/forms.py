@@ -1,12 +1,14 @@
 from django import forms
-from .models import User, Message
+from .models import Message, Person, Bot
 
-class UserForm(forms.ModelForm):
-    name = forms.CharField()
+class NewUserForm(forms.ModelForm):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.CharField(widget=forms.EmailInput)
 
     class Meta:
-        model = User
-        fields = ['name']
+        model = Person
+        fields = ['username', 'password', 'email']
 
 class MessageForm(forms.ModelForm):
     message = forms.CharField()
@@ -14,3 +16,6 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
         fields = ['message']
+
+class SelectBotForm(forms.Form):
+    bot = forms.ModelChoiceField(queryset=Bot.objects.all())

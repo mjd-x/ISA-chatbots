@@ -1,0 +1,30 @@
+[
+{
+    "model": "chat.user",
+    "pk": 1,
+    "fields": {
+        "username": "JulieBot"
+    }
+},
+{
+    "model": "chat.user",
+    "pk": 2,
+    "fields": {
+        "username": "EddieBot"
+    }
+},
+{
+    "model": "chat.bot",
+    "pk": 1,
+    "fields": {
+        "botInstance": 20873
+    }
+},
+{
+    "model": "chat.bot",
+    "pk": 2,
+    "fields": {
+        "botInstance": 12332376
+    }
+}
+]

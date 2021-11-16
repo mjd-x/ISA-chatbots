@@ -24,7 +24,7 @@
         <li class="clearfix">
           <img src="../../../static/chat/images/julie.png" alt="avatar" />
           <div class="about">
-            <div class="name">{{ julieBot.name }}</div>
+            <div class="name">{{ julieBot.username }}</div>
             <div class="status">
               <i class="fa fa-circle online"></i> online
             </div>
@@ -34,7 +34,7 @@
         <li class="clearfix">
           <img src="../../../static/chat/images/eddie.png" alt="avatar" />
           <div class="about">
-            <div class="name">{{ eddieBot.name }}</div>
+            <div class="name">{{ eddieBot.username }}</div>
             <div class="status">
               <i class="fa fa-circle online"></i> online
             </div>
@@ -42,21 +42,36 @@
         </li>
     </div>
 
+    {% if messages.1.idUser.id == 1 %}
     <div class="chat">
       <div class="chat-header clearfix">
         <img src="../../../static/chat/images/julie.png" alt="avatar" />
 
         <div class="chat-about">
-          <div class="chat-with">Chat with {{ julieBot.name }}</div>
+          <div class="chat-with">Chat with {{ julieBot.username }}</div>
           <div class="status">Hello</div>
         </div>
         <i class="fa fa-star"></i>
       </div> <!-- end chat-header -->
+    {% endif %}
+
+    {% if messages.1.idUser.id == 2 %}
+    <div class="chat">
+      <div class="chat-header clearfix">
+        <img src="../../../static/chat/images/eddie.png" alt="avatar" />
+
+        <div class="chat-about">
+          <div class="chat-with">Chat with {{ eddieBot.username }}</div>
+          <div class="status">Hi</div>
+        </div>
+        <i class="fa fa-star"></i>
+      </div> <!-- end chat-header -->
+    {% endif %}
 
       <div class="chat-history">
         <ul>
           {% for message in messages %}
-          {% if message.idUser.id == 1 %}
+          {% if message.idUser.id == 1 or message.idUser.id == 2%}
           <li>
               <div class="message-data">
                 <span class="message-data-name"><i class="fa fa-circle online"></i> {{ message.idUser }} </span>
@@ -68,7 +83,7 @@
           </li>
           {% endif %}
 
-          {% if message.idUser.id != 1 %}
+          {% if message.idUser.id != 1 and message.idUser.id != 2 %}
           <li class="clearfix">
               <div class="message-data align-right">
                 <span class="message-data-time" > {{ message.date }} </span> &nbsp; &nbsp;
@@ -99,7 +114,7 @@
   <li class="clearfix">
     <div class="message-data align-right">
       <span class="message-data-time" >{{time}}, Today</span> &nbsp; &nbsp;
-      <span class="message-data-name" >{{ eddieBot.name }}</span> <i class="fa fa-circle me"></i>
+      <span class="message-data-name" >{{ eddieBot.username }}</span> <i class="fa fa-circle me"></i>
     </div>
     <div class="message other-message float-right">
       {{messageOutput}}
@@ -110,7 +125,7 @@
 <script id="message-response-template" type="text/x-handlebars-template">
   <li>
     <div class="message-data">
-      <span class="message-data-name"><i class="fa fa-circle online"></i> {{ julieBot.name }}</span>
+      <span class="message-data-name"><i class="fa fa-circle online"></i> {{ julieBot.username }}</span>
       <span class="message-data-time">{{time}}, Today</span>
     </div>
     <div class="message my-message">
