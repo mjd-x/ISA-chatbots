@@ -13,7 +13,7 @@
     <h1>Start a new chat</h1>
     <form action="" method="post">
         {% csrf_token %}
-        {{ user_form.as_p }}
+        {{ bot_form.as_p }}
         {{ message_form.as_p }}
         <br>
         <button type="submit">Submit</button>
