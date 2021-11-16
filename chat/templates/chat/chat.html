@@ -42,6 +42,7 @@
         </li>
     </div>
 
+    {% if messages.1.idUser.id == 1 %}
     <div class="chat">
       <div class="chat-header clearfix">
         <img src="../../../static/chat/images/julie.png" alt="avatar" />
@@ -52,11 +53,25 @@
         </div>
         <i class="fa fa-star"></i>
       </div> <!-- end chat-header -->
+    {% endif %}
+
+    {% if messages.1.idUser.id == 2 %}
+    <div class="chat">
+      <div class="chat-header clearfix">
+        <img src="../../../static/chat/images/eddie.png" alt="avatar" />
+
+        <div class="chat-about">
+          <div class="chat-with">Chat with {{ eddieBot.username }}</div>
+          <div class="status">Hi</div>
+        </div>
+        <i class="fa fa-star"></i>
+      </div> <!-- end chat-header -->
+    {% endif %}
 
       <div class="chat-history">
         <ul>
           {% for message in messages %}
-          {% if message.idUser.id == 1 %}
+          {% if message.idUser.id == 1 or message.idUser.id == 2%}
           <li>
               <div class="message-data">
                 <span class="message-data-name"><i class="fa fa-circle online"></i> {{ message.idUser }} </span>
@@ -68,7 +83,7 @@
           </li>
           {% endif %}
 
-          {% if message.idUser.id != 1 %}
+          {% if message.idUser.id != 1 and message.idUser.id != 2 %}
           <li class="clearfix">
               <div class="message-data align-right">
                 <span class="message-data-time" > {{ message.date }} </span> &nbsp; &nbsp;
