@@ -75,7 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mjd_chatbots.wsgi.application'
 
 LOGIN_REDIRECT_URL = 'start-chat/'
-LOGIN_URL = reverse_lazy('login')
+LOGIN_URL = reverse_lazy('chat:login')
 
 AUTH_USER_MODEL = 'chat.User'  # para que tome este modelo para la autenticacion
 # Database

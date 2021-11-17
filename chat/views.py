@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 
@@ -11,12 +12,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # VIEWS
 #######################
 
-def indexView(request):
-    # messages = Message.objects.all().order_by("date")
+@login_required
+def chatView(request):
     julieBot = User.objects.get(id=1)
     eddieBot = User.objects.get(id=2)
 
-    last_chat = Chat.objects.last()  # encuentra el ultimo chat creado
+    # encuentra el ultimo chat creado por la persona
+    last_chat = Chat.objects.filter(idUser1=request.user.id).last()
     messages = Message.objects.filter(idChat=last_chat).order_by("date")
 
     context = {'messages': messages, 'julieBot': julieBot, 'eddieBot': eddieBot}
@@ -48,7 +50,7 @@ class RegisterView(TemplateView):
             return render(request, self.template_name, context)
 
 class FormView(LoginRequiredMixin, TemplateView):
-    template_name = 'chat/home.html'
+    template_name = 'chat/start_chat.html'
 
     def get(self, request, *args, **kwargs):
         bot_form = SelectBotForm()

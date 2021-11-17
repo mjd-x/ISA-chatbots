@@ -60,11 +60,11 @@ class StartChatView(generics.GenericAPIView):
 
         # busco o creo el usuario
         try:
-            user = User.objects.get(name=name)  # busco si ya existe el usuario
+            user = User.objects.get(username=name)  # busco si ya existe el usuario
             # si ya existe ese usuario, lo uso sin guardar de vuelta los datos de la form
         except User.DoesNotExist:  # no existe ese usuario todavia
-            User.objects.create(name=name)  # lo creo
-            user = User.objects.get(name=name)  # traigo el usuario que acabo de crear
+            User.objects.create(username=name)  # lo creo
+            user = User.objects.get(username=name)  # traigo el usuario que acabo de crear
 
         if user:  # validacion
             # crear la conversacion
