@@ -26,12 +26,11 @@ class StartChatApiTest(TestCase):
         self.assertEqual(uri, "/api/chats/1")
 
 class LoginTest(TestCase):
-    fixtures = ['seed.json']
+    fixtures = ['test-seed.json']
 
     def setUp(self):
-        Person.objects.create_user(username="someuser", password="somepassword", email="some@email.com", is_active=True)
         self.client = Client()
 
     def test_details(self):
-        response = self.client.post("/", {"name": "someuser", "password": "somepassword"})
-        self.assertEqual(response.status_code, 200)
+        response = self.client.post("/", {"username": "testuser", "password": "testpassword"})
+        self.assertEqual(response.status_code, 302)
