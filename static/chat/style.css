@@ -21,8 +21,11 @@ body {
   width: 260px;
   float: left;
 }
-.people-list .search {
+.people-list .button {
   padding: 20px;
+  text-align: center;
+  background-color: #86BB71;
+  font-size: 16px;
 }
 .people-list input {
   border-radius: 3px;

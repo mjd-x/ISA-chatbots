@@ -16,9 +16,8 @@
 <!-- partial:index.partial.html -->
 <div class="container clearfix">
     <div class="people-list" id="people-list">
-      <div class="search">
-        <input type="text" placeholder="search" />
-        <i class="fa fa-search"></i>
+      <div class="button">
+            <button onclick="window.location.href='/start-chat'">Start a new chat</button>
       </div>
       <ul class="list">
         <li class="clearfix">
@@ -39,7 +38,6 @@
               <i class="fa fa-circle online"></i> online
             </div>
           </div>
-        </li>
     </div>
 
     {% if messages.1.idUser.id == 1 %}
