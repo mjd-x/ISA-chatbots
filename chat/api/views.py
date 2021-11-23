@@ -34,12 +34,6 @@ class ChatViewSet(viewsets.ModelViewSet):
 
         # funcion list para serializar los mensajes
 
-        # esto se usa cuando son muchos mensajes??
-        # page = self.paginate_queryset(message_queryset)
-        # if page is not None:
-        #     message_serializer = MessageSerializer(page, many=True)
-        #     print(f"page: {self.get_paginated_response(message_serializer.data)}")
-
         # serializo los mensajes de la conversacion
         message_serializer = MessageSerializer(message_queryset, many=True)
 
