@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 class PersonSerializer(UserSerializer):
     class Meta:
         model = Person
-        exclude = ['is_active', 'last_login', 'is_staff', 'is_staff', 'is_superuser', 'groups', 'user_permissions']
+        exclude = ['is_active', 'last_login', 'is_staff', 'is_superuser', 'groups', 'user_permissions']
 
 class BotSerializer(UserSerializer):
     class Meta:
