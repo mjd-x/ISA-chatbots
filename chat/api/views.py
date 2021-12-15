@@ -47,7 +47,8 @@ class ChatViewSet(viewsets.ModelViewSet):
 
 class StartChatView(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
-        name = request.data.get('name', '')
+        name = request.data.get('username', '')
+        print("name" + name)
         message = request.data.get('message', '')
         print(request.data)
         print(f"{name}, {message}")
@@ -55,6 +56,7 @@ class StartChatView(generics.GenericAPIView):
         # busco o creo el usuario
         try:
             user = User.objects.get(username=name)  # busco si ya existe el usuario
+            print("user: " + user.username)
             # si ya existe ese usuario, lo uso sin guardar de vuelta los datos de la form
         except User.DoesNotExist:  # no existe ese usuario todavia
             User.objects.create(username=name)  # lo creo
@@ -62,6 +64,7 @@ class StartChatView(generics.GenericAPIView):
 
         if user:  # validacion
             # crear la conversacion
+            print("user: " + user.username)
             new_chat = Chat.objects.create(idUser1=user, idUser2=User.objects.get(id=1))  # juliebot
 
             # creo el mensaje
